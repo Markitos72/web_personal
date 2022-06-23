@@ -1,0 +1,82 @@
+<!-- https://www.youtube.com/watch?v=BqRkb_m_PuE -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu superior con submenus</title>
+    <script src="https://kit.fontawesome.com/940e6d9fb0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    
+    <!-- El header es la zona horizontal superior del menu -->
+    <header>
+        <!-- header_superior es un contenedor que corresponde a la parte de arriba del header. Es donde tenemos el logo -->
+        <div class="header__superior">
+            <!-- Logo es otro contenedor que está dentro de header_superior y contiene el logo -->
+            <div class="logo">
+                <img src="img/logo-magtimus-small-v2.jpg" alt="">
+            </div>
+            <div class="search">
+                <input type="search" placeholder="¿Qué deseas buscar?">
+            </div>
+        </div>
+        <!-- Esta zona contiene la barra azul del menu. Esta por debajo del header superior -->
+        <div class="container__menu">
+            
+            <div class="menu">
+                <input type="checkbox" id="check__menu">
+                <label id="#label__check" for="check__menu">
+                    <i class="fa-solid fa-bars icon__menu"></i>   
+                </label>
+
+                <nav>
+                    <ul>
+                        <li><a href="#" id="selected"></a></li>
+                        <li><a href="#">Servicios</a>
+                            <ul>
+                                <li><a href="#">Diseño Web</a></li>
+                                <li><a href="#">Diseño Gráfico</a></li>
+                                <li><a href="#">Ordenadores</a></li>
+                                <li><a href="#">Servidores</a></li>
+                                <li><a href="#">Analista</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Contactos</a></li>
+                    </ul> 
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <h2>Página de inicio</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sunt sequi velit iste enim id sed vitae ducimus! Sed voluptas aut repellat pariatur, doloremque quam vel? Unde esse a laudantium?</p>
+            <p>Do dolore velit commodo minim commodo pariatur aliqua anim nulla exercitation ipsum laborum amet. Occaecat occaecat proident non non esse incididunt ea fugiat. Lorem dolore voluptate magna veniam qui dolor velit. Culpa enim reprehenderit quis proident eiusmod dolore tempor officia excepteur exercitation in voluptate ut. Elit quis ad aute do cupidatat aliquip consequat aliquip consectetur.</p>
+        </article>
+
+        <article>
+            <h2>Página de nosotros</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sunt sequi velit iste enim id sed vitae ducimus! Sed voluptas aut repellat pariatur, doloremque quam vel? Unde esse a laudantium?</p>
+            <p>Do dolore velit commodo minim commodo pariatur aliqua anim nulla exercitation ipsum laborum amet. Occaecat occaecat proident non non esse incididunt ea fugiat. Lorem dolore voluptate magna veniam qui dolor velit. Culpa enim reprehenderit quis proident eiusmod dolore tempor officia excepteur exercitation in voluptate ut. Elit quis ad aute do cupidatat aliquip consequat aliquip consectetur.</p>
+        </article>
+
+        <article>
+            <h2>Página de servicios</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sunt sequi velit iste enim id sed vitae ducimus! Sed voluptas aut repellat pariatur, doloremque quam vel? Unde esse a laudantium?</p>
+            <p>Do dolore velit commodo minim commodo pariatur aliqua anim nulla exercitation ipsum laborum amet. Occaecat occaecat proident non non esse incididunt ea fugiat. Lorem dolore voluptate magna veniam qui dolor velit. Culpa enim reprehenderit quis proident eiusmod dolore tempor officia excepteur exercitation in voluptate ut. Elit quis ad aute do cupidatat aliquip consequat aliquip consectetur.</p>
+            </h2>
+        </article>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+}
+
+/* HEADER SUPERIOR */
+.header__superior{
+    max-width: 1200px;
+    margin: auto;  /* para que se centre */
+    display: flex; /* permite separar logo y search box en lados opuestos */
+    align-items: center;
+    justify-content: space-between; /* permite que logo y search box estén en misma linea pero separados en lados opuestos */
+    padding: 20px; 
+}
+
+/* Contenedor para el logo */
+.logo img{
+    width: 150px;
+}
+
+/* Contenedor del buscador */
+.search input{
+    width: 300px;
+    padding: 10px;
+}
+
+/* BARRA MENU */
+.container__menu{
+    width: 100%;
+    height: 70px;
+    background: #023877;
+    padding: 0px 20px; /* aunque la pantalla se reduzca, se mantiendrán 20px de menu a la izquieda */
+}
+
+.menu{
+    max-width: 1200px;
+    margin: auto; /*  mantiene la alineacion entre todas las opciones del menu */
+    height: 100%; /** importante para detectar los bordes del contenedor */ 
+}
+
+/* el nav contiene el texto de la barra de menu */
+nav{ 
+    height: 100%;
+}
+
+/* el simbolo > indica que se vaya al ul que sigue al nav.
+   si no le pongo >, las propiedades entre corchetes se aplicarian a menu y submenus.
+   Esta entrada simplemente dice que menu y submenus tendran propiedades diferentes. */
+nav > ul{
+ height: 100%;
+ display: flex;   /* colocamos los li (texto de los menus ppales) uno al lado del otro */
+}
+
+/* */
+nav ul li{
+    height: 100%;
+    list-style: none; /* eliminamos los bullets del menu */
+    position: relative; /* la posicion de los submenus es relativa a su padre menu */
+}
+
+
+/* seleccional el 1er li del menu (Inicio)
+   La etiqueta a es la que contiene el texto de inicio  */
+nav > ul > li:first-child > a{
+    background-image: url(../img/home.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center; /* centrado vertical y horizontalmente */
+    padding: 20px 40px; /* dimensiones del cuadro azul mas claro cuando selecciono el icono home */
+}
+
+/* evento on mouse over sobre el 1er elemento li del menu */
+nav > ul > li:first-child:hover > a{
+    background-image: url(../img/home.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* menus principales */
+nav > ul > li > a{
+    width: 100%;
+    height: 100%;
+    display: flex; /* posiciona el texto de los menus ppales en la mitad de alto de la barra azul  */
+    align-items: center;
+    padding: 14px; /* separacion entre los diferentes textos que forman el menu ppal */
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 300ms ease;
+}
+
+/* evento mouse over en el menu ppal */
+nav > ul > li > a:hover{
+    transform: scale(1.1); /* al pasar mouse por encima de uno de los textos aumenta un 10% su tamaño */
+    background: #0074C7; /* cambia un poco de color al pasar mouse x encima */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+/* Hacer que se quede marcado en azul mas claro que estamos en home */
+#selected{
+    transform: scale(1.1);
+    background-color: #0074C7;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+
+/* SUBMENU */
+/* En el submenu ya no hace falta trabajar con > a menos que tuviesemos un 2º submenú dentro del 1er submenú */
+/* el ul es el contenedor del submenu */
+nav ul li ul{
+    width: 200px;  /* ancho del box de los submenus */
+    display: flex; 
+    flex-direction: column; /* Nos aseguramos que los textos del submenu van uno debajo del otro */
+    background: white;
+    position: absolute; /*posicionar el texto del submenu debajo del texto de cada menu */
+    top: 90px; /* espaciado entre submenu y menu xq queremos que haya un recorrido para hacer efecto subida */
+    left: -5px; /* ajustar alinamiento del submenu con el menu */
+    padding: 14px 0px;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    z-index: 10; /* queremos que este encima de otros objetos */
+    transition: all 300ms ease;
+}
+
+/* quiero este efecto hover sobre el li (textos menu ppal, no submenu) */
+nav ul li:hover ul{
+    visibility: visible;
+    opacity: 1;
+    top: 70px
+}
+
+/* Triangulo del box blando del submenú */
+nav ul li ul:before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid white;
+    position: absolute;
+    top: -12px; /* posicion del triangulo dentro del cuadro blando del submenu */
+    left: 20px; /* posicion del triangulo dentro del cuadro blando del submenu */
+}
+
+
+/* eliminar bullets de la lista de submenus de un menú */
+nav ul li ul li a{
+    display: block; /* convertir de texto normal a bloque */
+    color: #0099E9;
+    padding: 6px; /* separacion del texto del submenu respecto del cuadro blanco del submenu */
+    padding-left: 14px; /* acabar de ajustar el texto del submenu al cuadro blanco del submenu */
+    margin-top: 10px; /* aumentamos la separacion entre textos del submenu */
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+}
+
+/* evento hover sobre los submenus: 
+   marcar cada texto de la lista de submenus de cada menu con box azul clarito cuando pasamos x encima */
+nav ul li ul li a:hover{
+    background: #0074C7;
+    color: white;
+    transform: scale(1.1);
+    padding-left: 30px;
+    font-size: 14px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+
+/* ARTICULO */
+
+main{
+    background: #f0f0f0;
+    padding: 40px 20px;
+    margin-top: 194px;
+    }
+
+ article{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px;
+    background: #fff;
+ }   
+
+ /* Parrafo */
+article p{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300px;
+}
+
+/* ELEMENTOS RESPONSIVOS */
+
+/* icono 3 barras */
+.icon__menu{
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    width: 26px;
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+
+#label__check{
+    width: 26px;
+    height: 100%;
+    display: none;
+}
+
+
+#check__menu{
+    display: none;
+}
+
+
+
+/* cosas que pasan cuando la ventana del navegador se reduce a 720px: 
+   desaparece el search box
+   el manu ppal (azul) pasa de barra horizontal a vertical */
+@media screen and (max-width: 720px){
+
+    /* ocultamos el buscador */
+    .search input{
+        display: none;
+    }
+
+    /* tamaño del header superior para juntar todo */
+    .header__superior{
+        padding: 10px;
+    }
+
+    /* reducimos el tañano del logo (de 150px a 100px) */
+    .log{
+        width: 100px
+    }
+
+    /* al ul dentro del nav:border:
+       queremos el icono casita y los textos del menu ppal uno encima del otro (es la transposicion del menu) */
+    nav > ul{
+        flex-direction: column; /* icono casita y texto menu ppal uno encima del otro */
+        background-color: #023877;
+        position: fixed; /* casita encima de todos los textos del menu ppal */
+        left: 0px;  /* posicion del icono casita */
+        top: 158px;
+        width: 100%; /* ancho del icono y textos = 100 px todos */
+        height: 0px;
+        transition: all 300ms ease;
+        z-index: 100; /* encima de todo */
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* cursor encima del texto del menu ppal */
+    nav > ul > li > a:hover{
+        transform: scale(1); /* no me aumentes el texto (logico si la pagina se reduce de tamaño */
+    }
+
+    /* posicion del submenu en pantalla reducida. Cuanto lo queremos a la derecha del borde izquierdo */
+    nav ul li ul{
+        left: 90px;
+    }
+
+    /* al pasar cursor por texto menu ppal, ajusto posicion cuadro blanco del submenu */
+    nav > ul > li:hover ul{
+        top: 50px;
+    } 
+
+    /* la posicion del icono home se mantiene en la esquina */
+    nav > ul > li:first-child a{
+        background-position: 20px;
+    }
+
+    /* cuando selecciono icno home, ahora no quiero que me aumente su tamaño */
+    #selected{
+        transform: scale(1)
+    }
+
+    /* */
+    #label__check{
+        display: block;
+    }
+
+    .icon__menu{
+        display: flex;
+    }
+
+    /* mostrar icono cuando hago clic en el icono 3 barras */
+    #check__menu:checked ~ nav > ul{
+        height: 300px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    main{
+        margin-top: 158px;
+    }
+
+}
+
