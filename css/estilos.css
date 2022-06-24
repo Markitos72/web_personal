@@ -9,6 +9,7 @@
     text-decoration: none;
 }
 
+
 header{
     width: 100%;
     position: fixed;
@@ -204,6 +205,35 @@ article p{
     font-size: 18px;
     font-weight: 300px;
 }
+
+/* Imagen */ 
+
+.titulo1{
+    font-size: 30px;
+}
+
+.imagen1{
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+
+.titulo2{
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.imagen2{
+    width: 350px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
 
 /* ELEMENTOS RESPONSIVOS */
 
